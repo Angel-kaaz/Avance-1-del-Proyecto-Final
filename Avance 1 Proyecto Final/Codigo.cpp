@@ -31,13 +31,7 @@ int main() {
 	{
 		switch (Eleccion) //Inicio de ingreso de datos para el articulo que se dara de alta
 		{
-		case 1:
-			/* Aqui me dio un error por que la primera variable que pongo aqui no la lee por alguna razon,
-			lo solucione poniendo un titulo y una variable basura que al no ser leida no afecta lo demas del codigo
-			y como no se imprime en dado caso que la llegue a solicitar tampoco afectara el proceso en el futuro*/
-
-			cout << "inicio del alta del articulo" << endl;//Titulo
-			cin.getline(Basura, 100, '\n');//Variable basura que no lee
+		case 1:cin.ignore();
 
 			cout << "Ingrese el nombre del articulo " << endl;
 			cin.getline(N1, 100, '\n');
@@ -56,11 +50,12 @@ int main() {
 
 			cout << "Ingrese la consola a la que pertenece el articulo" << endl;
 			cin.getline(Co1, 100, '\n');
+			
+			cout << "Ingrese el precio unitario del articulo" << endl;
+			cin >> P1;
+			PI1 = P1 * 1.16;
 
-			/*aqui creo yo deberia de empezar el ingreso del precio y calculo del impuesto, pero no estoy seguro si ponerlo
-			* por que requiere de validaciones para que el precio no sea cero y tampoco sea negativo, lo que llevaria a que vuelva
-			al inicio si no queremos usar ciclos de repeticion*/
-
+			
 			/*como todavia no hay lista se da la impresion de los datos para su verificacion, }
 			pero cuando ya la tengamos ya no es necesario*/
 			cout << "Nombre del articulo " << N1 << endl;
@@ -69,6 +64,8 @@ int main() {
 			cout << "Genero: " << G1 << endl;
 			cout << "Clasificacion: " << C1 << endl;
 			cout << "Consola: " << Co1 << endl;
+			cout << "El precio total del articulo es: " << PI1 << endl;
+			
 			
 			/*Eleccion de continuar o no ingresando articulos, si continua le regresara al menu sin ningun aviso
 			* si no desea continuar e ingresa otro valor, entonces de igual manera regresara al menu pero esta vez con
@@ -88,6 +85,7 @@ int main() {
 				cout << "Fin del ingreso de articulos" << endl;
 				return main(); 
 			}
+			break;
 
 			// las siguientes 3 opciones no hacen nada
 			case 2: cout<<"Disponible en un futuro"<<endl;
